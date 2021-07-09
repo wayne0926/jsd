@@ -13,9 +13,9 @@ def request_func(gui, url):
     gui.提交.setEnabled(False)
     times = int(gui.num)
     for timesn in range(times):
-        t = requests.get(url).json()['success']
+        result = requests.get(url).json()['success']
         gui.result += str('请求了第' + str(timesn+1) + '次：')
-        gui.result += str(t) + '\n'
+        gui.result += str(result) + '\n'
         time.sleep(2)
     gui.提交.setEnabled(True)
 
